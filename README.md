@@ -1,5 +1,5 @@
 # auto_timing_subtitle
-auto timing japanese subtitle using whisper and faster whisper
+auto timing japanese subtitle using [Whisper](https://github.com/openai/whisper) and [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
 
 Program is based on [faster-whisper](https://github.com/SYSTRAN/faster-whisper), a reimplementation of OpenAI's [Whisper](https://github.com/openai/whisper) , a general-prupose speech recognition model. This implementation is up to 4 times faster than original Whisper for the same accuracy while using less memory.
 
