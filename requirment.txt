@@ -1,0 +1,4 @@
+pip install ffmpeg
+pip install pysubs2
+pip install -U openai-whisper
+pip install faster-whisper
