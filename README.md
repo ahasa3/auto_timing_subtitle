@@ -5,10 +5,10 @@ Program is based on [faster-whisper](https://github.com/SYSTRAN/faster-whisper),
 
 The output file will be in Advanced SubStation Alpha(ass) format with built-in style of selected sub group so it can be directly imported into [Aegisub](https://github.com/Aegisub/Aegisub) for subsequent editing.
 ## Files
-`auto_timing_subtitle.py`: main program that make japanese subtitle format srt and ass file with tkinter interface
-`process.py`: program that making japanese subtitle process
-`srt2ass.py`: program that convert srt file into ass file
-`requirment.txt`: contains requirment library that must be installed before running the main program
+- `auto_timing_subtitle.py`: main program that make japanese subtitle format srt and ass file with tkinter interface
+- `process.py`: program that making japanese subtitle process
+- `srt2ass.py`: program that convert srt file into ass file
+- `requirment.txt`: contains requirment library that must be installed before running the main program
 # requirment
 You need to install this package before you run auto_timing_subtitle.py
 * Python : You can access this link to install [python](https://www.python.org/downloads/) and using [pip](https://pypi.org/project/pip/) for installing  packages/libraries
