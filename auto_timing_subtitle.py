@@ -26,11 +26,12 @@ def callback():
     split_menu.destroy()
     method_menu.destroy()
     beam_size.destroy()
-    time_consumtion = auto_sub_jp(type_, model, split, method, beam, file_name)
-    if time_ is not None:
-        time_.destroy()
-    time_ = Label(window, text=f'{time_consumtion}')
-    time_.pack()
+    beam_.destroy()
+    auto_sub_jp(type_, model, split, method, beam, file_name)
+    if done is not None:
+        done.destroy()
+    done = Label(window, text="Done!")
+    done.pack()
 def browseFiles():
     global filename
     global path_
@@ -115,7 +116,7 @@ process = None
 split_ = None
 method_ = None
 beam_ = None
-time_ = None
+done = None
 button_explore = Button(window, text="Browse Files", command=browseFiles)
 button_explore.pack()
 

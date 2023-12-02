@@ -1,5 +1,5 @@
 from pathlib import Path
-import os
+import subprocess
 from tqdm import tqdm
 import time
 from urllib.parse import quote_plus
@@ -17,7 +17,7 @@ def auto_sub_jp(type_, model, split, method, beam_size, file_name):
     split_method = method
     sub_style = "default"
     is_vad_filter = "False"
-    set_beam_size = beam_size
+    set_beam_size = int(beam_size)
     file_basename = Path(file_name).stem
     output_dir = Path(file_name).parent.resolve()
     print('Loading model...')
@@ -35,16 +35,18 @@ def auto_sub_jp(type_, model, split, method, beam_size, file_name):
     #Transcribe
     if file_type == "video":
         print('Extracting audio from video file...')
-        os.system(f'ffmpeg -i {file_name} -f mp3 -ab 192000 -vn {file_basename}.mp3')
+        ffmpeg_path = "./ffmpeg.exe"
+        ffmpeg_command = [ffmpeg_path, '-i', f'{file_name}', '-f', 'mp3', '-ab', '192000', '-vn', f'{file_basename}.mp3']
+        subprocess.run(ffmpeg_command,check=True)
         print('Done.')
     tic = time.time()
     print('Transcribe in progress...')
 
     if is_whisperv3:
-        results = model.transcribe(audio = f'{file_name}', language= language, verbose=False)
+        results = model.transcribe(audio = f'{file_basename}.mp3', language= language, verbose=False)
 
     else:
-        segments, info = model.transcribe(audio = f'{file_name}',
+        segments, info = model.transcribe(audio = f'{file_basename}.mp3',
                                             beam_size=set_beam_size,
                                             language=language,
                                             vad_filter=is_vad_filter,
@@ -74,4 +76,3 @@ def auto_sub_jp(type_, model, split, method, beam_size, file_name):
     print('ASS subtitle saved as: ' + ass_sub)
 
     torch.cuda.empty_cache()
-    return time_consumtion
