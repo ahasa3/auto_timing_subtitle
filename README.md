@@ -9,6 +9,7 @@ The output file will be in Advanced SubStation Alpha(ass) format with built-in s
 - `process.py`: program that making japanese subtitle process
 - `srt2ass.py`: program that convert srt file into ass file
 - `requirment.txt`: contains requirment library that must be installed before running the main program
+- `ffmpeg.exe`: there's link to download [ffmpeg.exe](https://drive.google.com/file/d/1yQBdXjjCHrxwjbNHvmFazyVv3Mh0ucOa/view?usp=sharing) for running ffmpeg
 # requirment
 You need to install this package before you run auto_timing_subtitle.py
 * Python : You can access this link to install [python](https://www.python.org/downloads/) and using [pip](https://pypi.org/project/pip/) for installing  packages/libraries
