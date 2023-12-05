@@ -1,6 +1,7 @@
 import os
 import regex as re
 import codecs
+#trying to commit
 def fileopen(input_file):
     # use correct codec to encode the input file
     encodings = ["utf-32", "utf-16", "utf-8", "cp1252", "gb2312", "gbk", "big5"]
